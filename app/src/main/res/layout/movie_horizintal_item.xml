@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movieItem"
+    android:layout_width="185dp"
+    android:layout_height="340dp"
+    android:layout_marginStart="@dimen/defaultMarginValue"
+    android:layout_marginTop="@dimen/defaultMarginValue"
+    android:layout_marginEnd="@dimen/defaultMarginValue"
+    android:layout_marginBottom="@dimen/defaultMarginValue"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:theme="@style/textCommonStyle">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/actorPhoto"
+            android:layout_width="185dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="@dimen/defaultMarginValue"
+            android:src="@drawable/pulp_fiction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/defaultMarginValue"
+            android:layout_marginTop="@dimen/defaultMarginValue"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/defaultPaddingValue"
+            android:paddingEnd="@dimen/defaultPaddingValue"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/actorPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/actorPhoto"
+            tools:text="movie name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/defaultMarginValue"
+            android:layout_marginTop="@dimen/defaultMarginValue"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/defaultPaddingValue"
+            android:paddingEnd="@dimen/defaultPaddingValue"
+            app:layout_constraintStart_toStartOf="@+id/actorPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/movie_name"
+            tools:text="movie genres" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/defaultMarginValue"
+            android:layout_marginTop="@dimen/defaultMarginValue"
+            android:background="@color/gray"
+            android:padding="@dimen/defaultMarginValue"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/actorPhoto"
+            tools:text="rating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/for_adult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/red"
+            android:padding="@dimen/defaultMarginValue"
+            android:text="@string/for_adults_warning"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

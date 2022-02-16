@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/textCommonStyle"
+    tools:context=".ui.movie_details.MovieDetailFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/favorite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="168dp"
+                android:layout_height="236dp"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:src="@drawable/pulp_fiction"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_genre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movie_poster"
+                app:layout_constraintTop_toTopOf="@+id/movie_poster" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movie_poster"
+                app:layout_constraintTop_toBottomOf="@+id/movie_genre" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movie_poster"
+                app:layout_constraintTop_toBottomOf="@+id/movie_rating" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_release_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movie_poster"
+                app:layout_constraintTop_toBottomOf="@+id/movie_duration" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/for_adult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:text="@string/for_adults_warning"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/movie_poster"
+                app:layout_constraintTop_toBottomOf="@+id/movie_release_date"
+                tools:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/favorite"
+                style="?android:attr/starStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_poster" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actorsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textStyle="bold"
+                android:text="@string/actors_title"
+                app:layout_constraintTop_toBottomOf="@+id/movie_description" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/actorsRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/actorsTitle"
+                tools:listitem="@layout/actor_item" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/note_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                android:paddingStart="@dimen/defaultPaddingValue"
+                android:paddingTop="@dimen/defaultPaddingValue"
+                android:paddingEnd="@dimen/defaultPaddingValue"
+                android:text="@string/your_note_title"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actorsRecyclerView" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/movie_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                android:textColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/note_title"
+                tools:text="text example" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/movieDetailFragmentLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</FrameLayout>

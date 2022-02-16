@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/textCommonStyle"
+    tools:context=".ui.movie_details.MovieDetailFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actor_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Actor name" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/actor_photo"
+                android:layout_width="140dp"
+                android:layout_height="210dp"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:src="@drawable/pulp_fiction"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actor_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/day_of_birth_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:text="@string/day_of_birth_title"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/actor_photo"
+                app:layout_constraintTop_toTopOf="@+id/actor_photo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date_and_place_of_birth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                android:paddingStart="@dimen/defaultPaddingValue"
+                android:paddingEnd="@dimen/defaultPaddingValue"
+                app:layout_constraintEnd_toStartOf="@+id/showPlaceOnMapButton"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/actor_photo"
+                app:layout_constraintTop_toBottomOf="@id/day_of_birth_title"
+                tools:layout_editor_absoluteY="81dp"
+                tools:text="Date and place of birth big text big text big text big text" />
+
+            <ImageButton
+                android:id="@+id/showPlaceOnMapButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/show_birth_place_on_the_map_text"
+                android:src="@drawable/ic_red_pin"
+                android:background="@color/white"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/date_and_place_of_birth"
+                app:layout_constraintStart_toEndOf="@id/date_and_place_of_birth"
+                app:layout_constraintTop_toBottomOf="@id/day_of_birth_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actor_biography"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMarginValue"
+                android:layout_marginTop="@dimen/defaultMarginValue"
+                android:layout_marginEnd="@dimen/defaultMarginValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actor_photo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/actorDetailFragmentLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</FrameLayout>

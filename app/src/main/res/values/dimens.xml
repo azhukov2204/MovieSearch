@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="defaultMarginValue">4dp</dimen>
+    <dimen name="defaultPaddingValue">2dp</dimen>
+    <dimen name="mediaTitleTextSize">40sp</dimen>
+    <dimen name="moviesHorizontalListTextSize">35sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="contact_name_text_size">30sp</dimen>
+    <dimen name="phone_number_text_size">20sp</dimen>
+</resources>
