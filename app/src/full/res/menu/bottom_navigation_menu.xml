@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/movieListsFragment"
+        android:icon="@drawable/ic_movies_search"
+        android:orderInCategory="10"
+        android:title="@string/movies_search_nav_button_text" />
+
+    <item
+        android:id="@+id/movieHistoryFragment"
+        android:icon="@drawable/ic_movies_history"
+        android:orderInCategory="20"
+        android:title="@string/movies_history_nav_button_text" />
+
+    <item
+        android:id="@+id/movieFavoriteFragment"
+        android:icon="@drawable/ic_favorite"
+        android:orderInCategory="30"
+        android:title="@string/favorite_movies_text" />
+
+    <item
+        android:id="@+id/phonesBookFragment"
+        android:icon="@drawable/ic_phones_book"
+        android:orderInCategory="40"
+        android:title="@string/phones_book_text" />
+
+    <item
+        android:id="@+id/mapsFragment"
+        android:icon="@drawable/ic_cinemas_map"
+        android:orderInCategory="50"
+        android:title="@string/cinemas_map_text" />
+</menu>
